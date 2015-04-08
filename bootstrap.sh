@@ -21,3 +21,11 @@
 # echo "source /opt/ros/hydro/setup.bash" >> ~/.bashrc
 # source ~/.bashrc
 # source /opt/ros/hydro/setup.bash
+########################################
+
+# Updatea and upgrade
+sudo apt-get update
+sudo apt-get upgrade -y
+
+# Install useful packages
+sudo apt-get install -y git python-rosinstall ros-hydro-roslint ros-hydro-cmake-modules
