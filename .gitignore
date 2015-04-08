@@ -1,1 +1,6 @@
-.vagrant/
+# Use .gitignore as a whitelist
+# since we only want Vagrant specific stuff
+*
+!Vagrantfile
+!.gitignore
+!bootstrap.sh
