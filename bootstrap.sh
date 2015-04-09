@@ -29,3 +29,10 @@ sudo apt-get upgrade -y
 
 # Install useful packages
 sudo apt-get install -y git python-rosinstall ros-hydro-roslint ros-hydro-cmake-modules
+
+# Source ROS
+echo "source /opt/ros/hydro/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+
+# Install packages required by lileee
+sudo apt-get install -y ros-hydro-turtlebot ros-hydro-turtlebot-gazebo ros-hydro-turtlebot-msgs ros-hydro-kobuki-msgs
