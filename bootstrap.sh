@@ -37,6 +37,10 @@ sudo apt-get install -y ros-hydro-turtlebot ros-hydro-turtlebot-gazebo ros-hydro
 echo "source /opt/ros/hydro/setup.bash" >> /home/vagrant/.bashrc
 source /home/vagrant/.bashrc
 
+# Rosdep run under vagrant user
+runuser -l vagrant -c 'sudo rosdep init'
+runuser -l vagrant -c 'rosdep update'
+
 # Download fire-hydrant model for lileee q-learning code
 wget http://old.gazebosim.org/models/fire_hydrant/model.tar.gz -O model.tar.gz
 mkdir -p /home/vagrant/.gazebo/models
