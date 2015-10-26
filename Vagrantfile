@@ -13,7 +13,8 @@ Vagrant.configure(2) do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
   # config.vm.box = "hashicorp/precise64"
-  config.vm.box = "rishihahs/ros-hydro-xfce"
+  # config.vm.box = "rishihahs/ros-hydro-xfce"
+  config.vm.box = "shadowrobot/ros-indigo-desktop-trusty64"
   config.vm.provision :shell, path: "bootstrap.sh"
 
   # Disable automatic box update checking. If you disable this, then

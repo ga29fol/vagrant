@@ -25,13 +25,13 @@
 
 # Updatea and upgrade
 sudo apt-get update
-sudo apt-get upgrade -y
+sudo apt-get upgrade
 
 # Install useful packages
-sudo apt-get install -y git python-rosinstall ros-hydro-roslint ros-hydro-cmake-modules
+sudo apt-get install -y git python-rosinstall
 
 # Install packages required by lileee
-sudo apt-get install -y ros-hydro-turtlebot ros-hydro-turtlebot-gazebo ros-hydro-turtlebot-msgs ros-hydro-kobuki-msgs
+sudo apt-get install ros-indigo-turtlebot ros-indigo-turtlebot-apps ros-indigo-turtlebot-interactions ros-indigo-turtlebot-simulator ros-indigo-kobuki-ftdi ros-indigo-rocon-remocon ros-indigo-rocon-qt-library ros-indigo-ar-track-alvar-msgs
 
 # Source ROS
 echo "source /opt/ros/hydro/setup.bash" >> /home/vagrant/.bashrc
@@ -40,10 +40,3 @@ source /home/vagrant/.bashrc
 # Rosdep run under vagrant user
 runuser -l vagrant -c 'sudo rosdep init'
 runuser -l vagrant -c 'rosdep update'
-
-# Download fire-hydrant model for lileee q-learning code
-wget http://old.gazebosim.org/models/fire_hydrant/model.tar.gz -O model.tar.gz
-mkdir -p /home/vagrant/.gazebo/models
-tar xvf model.tar.gz -C /home/vagrant/.gazebo/models
-rm model.tar.gz
-sudo chown -R vagrant:vagrant /home/vagrant/.gazebo # The above mkdir is run as root, so permissions need to be changed
